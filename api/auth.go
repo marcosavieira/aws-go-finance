@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"https://github.com/marcosavieira/aws-go-finance/db/util"
+	"github.com/marcosavieira/aws-go-finance/db/util"
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"

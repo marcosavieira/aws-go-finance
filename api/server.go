@@ -1,7 +1,7 @@
 package api
 
 import (
-	db "https://github.com/marcosavieira/aws-go-finance/db/sqlc"
+	db "github.com/marcosavieira/aws-go-finance/db/sqlc"
 
 	"github.com/gin-gonic/gin"
 )

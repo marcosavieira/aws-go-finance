@@ -1,4 +1,3 @@
-
 createdb:
 	createdb --username=postgres --owner=postgres go_finance
 
