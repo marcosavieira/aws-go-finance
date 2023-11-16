@@ -1,8 +1,9 @@
 package api
 
 import (
+	db "https://github.com/marcosavieira/aws-go-finance/db/sqlc"
+
 	"github.com/gin-gonic/gin"
-	db "github.com/marcosavieira/go-finance/db/sqlc"
 )
 
 type Server struct {
@@ -11,7 +12,7 @@ type Server struct {
 }
 
 func CORSconfig() gin.HandlerFunc {
-	return func(context *gin.Context){
+	return func(context *gin.Context) {
 		context.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		context.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		context.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
@@ -31,7 +32,6 @@ func NewServer(store *db.SQLStore) *Server {
 	//router := gin.Default()
 	router := gin.Default()
 	router.Use(CORSconfig())
-	
 
 	//*User Routers
 	router.POST("/user", server.createUser)

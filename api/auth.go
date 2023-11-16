@@ -5,9 +5,10 @@ import (
 	"net/http"
 	"time"
 
+	"https://github.com/marcosavieira/aws-go-finance/db/util"
+
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/marcosavieira/go-finance/db/util"
 )
 
 type loginRequest struct {
@@ -16,8 +17,8 @@ type loginRequest struct {
 }
 
 type loginResponse struct {
-	UserID int32 `json:"user_id"`
-	Token string `json:"token"`
+	UserID int32  `json:"user_id"`
+	Token  string `json:"token"`
 }
 
 func (server *Server) userLogin(ctx *gin.Context) {
@@ -43,8 +44,6 @@ func (server *Server) userLogin(ctx *gin.Context) {
 		return
 	}
 
-	
-
 	claims := jwt.MapClaims{}
 	claims["authorized"] = true
 	claims["exp"] = time.Now().Add(time.Minute * 100).Unix()
@@ -58,8 +57,8 @@ func (server *Server) userLogin(ctx *gin.Context) {
 
 	arg := &loginResponse{
 		UserID: user.ID,
-		Token: tokenString,
+		Token:  tokenString,
 	}
-	
+
 	ctx.JSON(http.StatusOK, arg)
 }

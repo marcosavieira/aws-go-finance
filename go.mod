@@ -1,4 +1,4 @@
-module github.com/marcosavieira/go-finance
+module https: //github.com/marcosavieira/aws-go-finance
 
 go 1.21.3
 

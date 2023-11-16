@@ -5,9 +5,10 @@ import (
 	"net/http"
 	"time"
 
+	db "https://github.com/marcosavieira/aws-go-finance/db/sqlc"
+	"https://github.com/marcosavieira/aws-go-finance/db/util"
+
 	"github.com/gin-gonic/gin"
-	db "github.com/marcosavieira/go-finance/db/sqlc"
-	"github.com/marcosavieira/go-finance/db/util"
 )
 
 type createAccountRequest struct {

@@ -5,10 +5,11 @@ import (
 	"log"
 	"os"
 
+	"https://github.com/marcosavieira/aws-go-finance/api"
+	db "https://github.com/marcosavieira/aws-go-finance/db/sqlc"
+
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
-	"github.com/marcosavieira/go-finance/api"
-	db "github.com/marcosavieira/go-finance/db/sqlc"
 )
 
 func main() {
